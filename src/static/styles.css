@@ -16,12 +16,52 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+.auth-controls {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+#auth-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+#auth-toggle svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+#login-form {
+  position: absolute;
+  z-index: 1;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 260px;
+  padding: 15px;
+  color: #333;
+  text-align: left;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#login-form .form-group {
+  margin-bottom: 10px;
 }
 
 header h1 {
@@ -111,18 +151,16 @@ section h3 {
 }
 
 .delete-btn {
-  background: none;
-  border: none;
-  color: #c62828;
+  background-color: #c62828;
   cursor: pointer;
-  font-size: 14px;
-  padding: 2px 5px;
+  font-size: 13px;
+  padding: 5px 8px;
   transition: all 0.2s;
   border-radius: 3px;
 }
 
 .delete-btn:hover {
-  background-color: #ffebee;
+  background-color: #a51f1f;
 }
 
 .participants-section p {
@@ -165,6 +203,8 @@ button:hover {
 }
 
 .message {
+  flex: 1 0 100%;
+  max-width: 1030px;
   margin-top: 20px;
   padding: 10px;
   border-radius: 4px;
@@ -197,4 +237,15 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding-top: 65px;
+  }
+
+  .auth-controls {
+    top: 12px;
+    right: 12px;
+  }
 }
